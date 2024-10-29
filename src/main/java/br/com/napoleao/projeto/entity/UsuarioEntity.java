@@ -1,7 +1,5 @@
 package br.com.napoleao.projeto.entity;
 
-import java.util.Objects;
-
 import org.springframework.beans.BeanUtils;
 
 import br.com.napoleao.projeto.dto.UsuarioDTO;
@@ -11,9 +9,11 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import lombok.Data;
 
 @Entity
 @Table(name = "NPL_USUARIO")
+@Data
 public class UsuarioEntity {
 
 	@Id
@@ -38,64 +38,6 @@ public class UsuarioEntity {
 	
 	public UsuarioEntity() {
 		
-	}
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public String getNome() {
-		return nome;
-	}
-
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-
-	public String getLogin() {
-		return login;
-	}
-
-	public void setLogin(String login) {
-		this.login = login;
-	}
-
-	public String getSenha() {
-		return senha;
-	}
-
-	public void setSenha(String senha) {
-		this.senha = senha;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	@Override
-	public int hashCode() {
-		return Objects.hash(id);
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		UsuarioEntity other = (UsuarioEntity) obj;
-		return Objects.equals(id, other.id);
-	}
-	
+	}	
 	
 }
